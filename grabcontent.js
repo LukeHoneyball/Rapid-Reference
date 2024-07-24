@@ -7,7 +7,7 @@ doc_elements.forEach(function(ele) {
 	for(var i = ele.attributes.length - 1; i >= 0; i--){
 		var atr = ele.attributes[i];
 		if(atr.specified){
-			if(atr.value.includes("author")){
+			if(atr.value.includes("author") && atr.value.includes("authori") == false){
 				if(ele.textContent.trim().length < 25 && ele.textContent.trim() != ""){
 					authorName = ele.textContent.trim();
 				}
