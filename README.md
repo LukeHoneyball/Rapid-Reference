@@ -17,3 +17,5 @@ Please do not distribute with the goal of selling my program.
 3. You can check the preview of the cited references in the panel
 4. You can copy the citation list to the clipboard through simply clicking the "Copy Citation" button
 5. You're Done!
+
+Thanks for using my software 😊
