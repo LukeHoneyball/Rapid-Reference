@@ -8,6 +8,7 @@ doc_elements.forEach(function(ele) {
 		var atr = ele.attributes[i];
 		if(atr.specified){
 			if(atr.value.includes("author") && atr.value.includes("authori") == false){
+				console.log("found author");
 				if(ele.textContent.trim().length < 25 && ele.textContent.trim() != ""){
 					authorName = ele.textContent.trim();
 				}
