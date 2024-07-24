@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Rapid Reference",
+  "description": "An extension that allows for hassle-free website citation/referencing.",
+  "version": "1.0",
+  "permissions": [
+    "webNavigation",
+    "activeTab",
+    "scripting",
+	"storage",
+    "tabs"
+  ],
+  "background": {
+    "service_worker": "hidden.js"
+  },
+  "action": {
+    "default_popup": "dispose.html",
+    "default_icon": "icon_small.png"
+  },
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self';"
+  }
+}
