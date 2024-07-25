@@ -10,10 +10,8 @@ doc_elements.forEach(function(ele) {
 		if(atr.specified){
 			if(main_author == false){
 				if(atr.value.includes("author") && atr.value.includes("authori") == false){
-					console.log("found author");
-					if(ele.textContent.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '').trim().length < 50 && ele.textContent.trim() != ""){
-						authorName = ele.textContent.trim();
-						console.log("author changed");
+					if(ele.textContent.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '').replace(/\s+/g, ' ').trim().length < 50 && ele.textContent.trim() != ""){
+						authorName = ele.textContent.replace(/\s+/g, ' ').trim();
 						if(atr.value.includes("main")){
 							main_author = true;
 						}
@@ -21,9 +19,8 @@ doc_elements.forEach(function(ele) {
 					
 				}
 				if(atr.value.includes("byline")){
-					if(ele.textContent.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '').trim().length < 50 && ele.textContent.trim() != ""){
-						authorName = ele.textContent.trim();
-						console.log("author changed");
+					if(ele.textContent.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '').replace(/\s+/g, ' ').trim().length < 50 && ele.textContent.trim() != ""){
+						authorName = ele.textContent.replace(/\s+/g, ' ').trim();
 						if(atr.value.includes("main")){
 							main_author = true;
 						}
@@ -31,8 +28,8 @@ doc_elements.forEach(function(ele) {
 				}
 			}
 			if(atr.value.includes("date")){
-				if(ele.textContent.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '').trim().length > 3 && ele.textContent.trim().length < 25 && ele.textContent.trim() != "" && /\d/.test(ele.textContent) == true){
-					date = ele.textContent.trim();
+				if(ele.textContent.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '').replace(/\s+/g, ' ').trim().length > 3 && ele.textContent.trim().length < 25 && ele.textContent.trim() != "" && /\d/.test(ele.textContent) == true){
+					date = ele.textContent.replace(/\s+/g, ' ').trim();
 				}
 			}
 		}
