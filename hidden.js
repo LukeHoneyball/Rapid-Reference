@@ -48,7 +48,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 			`(${message.data.date}), `+
 			`${message.data.title} ` +
 			`[online] Available from: < ${urlfrom} >` +
-			` (Accessed on: ${currdate.getDate()}/${month}/${currdate.getFullYear()})\n`+
+			` \n(Accessed on: ${currdate.getDate()}/${month}/${currdate.getFullYear()})\n\n`+
 			`${returned.citelist}`},function(){}); 
 		}
 		

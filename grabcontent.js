@@ -50,9 +50,6 @@ documentAttributes = {
 };
 
 chrome.runtime.sendMessage({ type: 'DOCUMENT_ATTRIBUTES', data: documentAttributes });
-if(document.body.innerHTML.includes("Rapid Reference Session In Progress") == false){
-	document.body.innerHTML+= "<div style='top: 5px; padding: 1px; pointer-events: none; z-index: 99 !important; right: 15px; color: black; border: 2px solid black; border-radius: 4px; background-color: white; position: fixed; font-family: consolas; font-size: 1vh;opacity: 0.5;'>Rapid Reference Session In Progress</div>"
-}
 
 //yea this code is nice i guess
 
