@@ -2,6 +2,7 @@ function startup(){
 
 	chrome.storage.local.set({citelist: []},function(){});
 	chrome.storage.local.set({sessionon: false},function(){});
+	chrome.storage.local.set({searchChecked: true},function(){});
 	chrome.storage.local.set({urlgot: ""},function(){});
 	startup_otherfunc();
 }

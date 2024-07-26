@@ -49,7 +49,7 @@ function clearer(){
 	chrome.storage.local.get("citelist", function(returned){//get citelist
 	document.getElementById("content").innerHTML = "";
 		for(i in returned.citelist){//go through all elements
-				document.getElementById("content").innerHTML = `<div style='border:2px solid white;border-radius:3px; position: relative; margin-left: 5px; margin-right: 5px; padding-bottom: 10px; padding-top: 10px;'><button style='position: absolute; bottom: 0; right: 0;font-size: 10px;background-color: red;' id='${i}'><img src='trash_icon.png' /></button>` + returned.citelist[i] + "</div></br>" + document.getElementById("content").innerHTML;
+				document.getElementById("content").innerHTML = `<div style='border:2px solid white;border-radius:3px; position: relative; margin-left: 5px; margin-right: 5px; padding-bottom: 10px; padding-top: 10px;'><button style='position: absolute; bottom: 0; right: 0;font-size: 10px;background-color: red;' id='${i}'><img id='i${i}'src='trash_icon.png' /></button>` + returned.citelist[i] + "</div></br>" + document.getElementById("content").innerHTML;
 				//set text and button etc
 				
 		}
@@ -59,7 +59,14 @@ function clearer(){
 			document.getElementById(i.toString()).onclick = function(event){
 				var id = event.target.id;
 				var temp = returned.citelist;
-				temp.splice(parseInt(id), 1);
+				
+				if(id.includes('i')){
+					temp.splice(parseInt(id.replace("i","")), 1);
+				}else{
+					temp.splice(parseInt(id), 1);
+				}
+				
+				
 				chrome.storage.local.set({citelist: temp});
 				clearer();
 			}
