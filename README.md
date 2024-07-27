@@ -22,3 +22,6 @@ Please do not distribute with the goal of selling my program.
 5. You're Done!
 
 Thanks for using my software 😊
+
+
+SOURCEFORGE LINK: https://rapid-reference-web-extension.sourceforge.io/
